@@ -1,0 +1,7 @@
+#!/bin/sh
+
+day="$1"
+[ -z "$day" ] && { echo "Provide a day number"; exit 1; }
+
+session_token="$(cat ~/.aoc_session_token)"
+curl --cookie session="$session_token" "https://adventofcode.com/2024/day/$day/input"
