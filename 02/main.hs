@@ -1,10 +1,12 @@
 import Data.List (sort)
 import Text.Printf (printf)
 
+{-# LANGUAGE TypeApplications #-}
+
 main :: IO ()
 main = do
     s <- map words . lines <$> readFile "input"
-    let records :: [[Int]] = (map . map) read s
+    let records = (map . map) (read @Int) s
         result1 = length $ filter isValidRecord records
         result2 = length $ filter isValidRecordTolerate records
     printf "Part 1: %d\n" result1

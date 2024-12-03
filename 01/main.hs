@@ -1,10 +1,12 @@
 import Data.List
 import Text.Printf
 
+{-# LANGUAGE TypeApplications #-}
+
 main :: IO ()
 main = do
     s <- map words . lines <$> readFile "input"
-    let location_ids :: [(Int, Int)] = map (\[l1, l2] -> (read l1, read l2)) s
+    let location_ids = map (\[l1, l2] -> (read @Int l1, read @Int l2)) s
         (lst1, lst2) = unzip location_ids
         lst1Sorted = sort lst1
         lst2Sorted = sort lst2
