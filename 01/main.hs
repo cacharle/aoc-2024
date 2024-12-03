@@ -14,5 +14,3 @@ main = do
         result2 = sum $ map (\id -> id * (length $ filter (== id) lst2)) lst1
     printf "Part 1: %d\n" result1
     printf "Part 2: %d\n" result2
-
-
