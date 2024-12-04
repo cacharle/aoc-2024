@@ -19,7 +19,7 @@ parseCorruptedMemory part1 toggle s = inner toggle s
             | "do()"      `isPrefixOf` s  = inner True rest
             | "don't()"   `isPrefixOf` s  = inner False rest
             | not ("mul(" `isPrefixOf` s) = inner toggle rest
-            | otherwise = fromMaybe (inner  toggle rest) $ do
+            | otherwise = fromMaybe (inner toggle rest) $ do
                 guard (part1 || toggle)
                 (n1, c1:rest1) <- tryParseInt (drop 4 s)
                 guard (c1 == ',')
