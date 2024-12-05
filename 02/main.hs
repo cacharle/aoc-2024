@@ -1,5 +1,5 @@
-import Data.List (sort)
-import Text.Printf (printf)
+import           Data.List   (sort)
+import           Text.Printf (printf)
 
 {-# LANGUAGE TypeApplications #-}
 

@@ -1,5 +1,5 @@
-import Data.List
-import Text.Printf
+import           Data.List
+import           Text.Printf
 
 {-# LANGUAGE TypeApplications #-}
 

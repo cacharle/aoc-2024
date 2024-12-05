@@ -1,8 +1,8 @@
-import Data.Char     (isDigit)
-import Data.List     (isPrefixOf)
-import Data.Maybe    (fromMaybe)
-import Control.Monad (guard)
-import Text.Printf   (printf)
+import           Control.Monad (guard)
+import           Data.Char     (isDigit)
+import           Data.List     (isPrefixOf)
+import           Data.Maybe    (fromMaybe)
+import           Text.Printf   (printf)
 
 main :: IO ()
 main = do

@@ -1,6 +1,6 @@
-import Data.List   (transpose, isPrefixOf, reverse)
-import Data.Maybe  (fromMaybe)
-import Text.Printf (printf)
+import           Data.List   (isPrefixOf, reverse, transpose)
+import           Data.Maybe  (fromMaybe)
+import           Text.Printf (printf)
 
 main :: IO ()
 main = do
