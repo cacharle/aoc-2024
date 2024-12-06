@@ -40,8 +40,7 @@ diagonals g = [diagonal d g | d <- [-(length g)..length g]]
 
 
 diagonal :: Int -> [String] -> String
--- TODO: find a fancy way of removing the lambda
-diagonal d g = zipWith (\r i -> fromMaybe '.' (r !? i)) g [d..]
+diagonal d g = zipWith ((fromMaybe '.' .) . (!?)) g [d..]
 
 -- Can't use the !? operator from Data.List because my base version is too low
 (!?) :: [a] -> Int -> Maybe a
