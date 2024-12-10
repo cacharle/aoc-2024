@@ -21,10 +21,8 @@ parseCorruptedMemory part1 toggle s = inner toggle s
             | not ("mul(" `isPrefixOf` s) = inner toggle rest
             | otherwise = fromMaybe (inner toggle rest) $ do
                 guard (part1 || toggle)
-                (n1, c1:rest1) <- tryParseInt (drop 4 s)
-                guard (c1 == ',')
-                (n2, c2:rest2) <- tryParseInt rest1
-                guard (c2 == ')')
+                (n1, ',':rest1) <- tryParseInt (drop 4 s)
+                (n2, ')':rest2) <- tryParseInt rest1
                 return $ (n1 * n2) + inner toggle rest2
           inner _ "" = 0
 
@@ -32,6 +30,6 @@ parseCorruptedMemory part1 toggle s = inner toggle s
 tryParseInt :: String -> Maybe (Int, String)
 tryParseInt s = case span isDigit s of
                     ("", rest) -> Nothing
-                    (n,  rest) -> Just ((read n), rest)
+                    (n,  rest) -> Just (read n, rest)
 
 
